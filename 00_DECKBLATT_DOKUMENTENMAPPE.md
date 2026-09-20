@@ -1,39 +1,68 @@
-# DECKBLATT – DOKUMENTENMAPPE JOBCENTER
+# R-1 · DECKBLATT DER JOBCENTER-PRÜFMAPPE
 
-## Betriebskosten-, Heizungs- und Warmwassernachweise
+**An das Jobcenter [Ort]**  
+**BG-/Aktenzeichen:** [eintragen]  
 
-**Objekt:** Gubener Straße 53a, 10243 Berlin  
-**Bezugszeitraum:** 2014–2024  
-**Ergänzende Vorgänge:** 2025–2026  
-**Mieter:** Andreas Reiner Schade  
-**Dokumentationsstand:** 20. September 2026
+## Prüfverfahren zu Betriebs-, Heiz- und Warmwasserkosten
+
+**Antragsteller/Mieter:** Andreas Rainer Schade  
+**Objekt:** Gubener Straße 53a (Lasdehner Straße 32), 4. OG links, 10243 Berlin  
+**Verwaltungseinheit:** 103 03 M / 051 02  
+**Bezugszeitraum:** 2009–2024 · ergänzende Vorgänge 2025–2026  
 
 ---
 
-### Zweck der Mappe
+## GEGENSTAND DER MAPPE
 
-Geordnete Vorlage von Originalunterlagen, Auswertungen, Foto-/Videonachweisen und offenen Prüfaufträgen zur nachvollziehbaren Prüfung von Heiz-, Warmwasser- und Betriebskosten sowie ihrer möglichen Berücksichtigung durch das Jobcenter.
+Die Mappe bündelt Originalunterlagen, Abrechnungs- und Saldenregister, technische Beobachtungen, Schriftverkehr sowie konkrete Prüfbitten zur nachvollziehbaren Prüfung der Unterkunfts-, Heiz- und Warmwasserkosten.
 
-### Wichtiger Statushinweis
+## KERNBITTEN
 
-Diese Mappe ist eine strukturierte Arbeits- und Prüfunterlage. Sie ersetzt weder eine behördliche Entscheidung noch ein technisches Sachverständigengutachten oder eine anwaltliche Prüfung. Feststellungen, Rechenwerte, Prüfthesen und rechtliche Bewertungen werden getrennt ausgewiesen.
+- Entscheidungsgrundlagen, Berechnungsblätter und Prüfvermerke offenlegen;
+- Wohnungs-, Gebäude- und Jobcenterwerte trennen;
+- Originalabrechnungen, Mess-/Ablesedaten und Mietkonto abgleichen;
+- widersprüchliche Werte für 2022–2024 klären;
+- fehlende Unterlagen benennen und Akteneinsicht ermöglichen;
+- Ergebnis und gegebenenfalls Neuberechnung schriftlich begründen.
 
-### Logo/Signet
+## RECHENKONTROLLE AUS DEM TABELLENREGISTER
 
-[Privates Dokumentationslogo – Bilddatei nach Einbindung im Repository hier einsetzen]
+| Jahr | Gesamtkosten | Vorauszahlung | Ergebnis |
+|---|---:|---:|---:|
+| 2022 | 2.101,54 € | 2.454,00 € | 352,46 € |
+| 2023 | 2.581,63 € | 3.120,00 € | 538,37 € |
+| 2024 | 3.068,06 € | 3.120,00 € | 51,94 € |
+| **Summe** |  |  | **942,77 €** |
 
-Das Signet ist keine amtliche Kennzeichnung und bestätigt keine behördliche, gerichtliche oder sachverständige Prüfung.
+**Widerspruchswerte:** `643,42 €` und `1.534,25 €` werden getrennt geführt und nicht ohne Originalabgleich als Endwerte verwendet.
 
-### Leitprinzip
+## REGISTERÜBERSICHT
 
-> Originalquelle → konkrete Feststellung → Rechen-/Technikprüfung → Beweisfrage → offene Gegenprüfung → Antrag an das Jobcenter
+| Register | Inhalt | Datei |
+|---|---|---|
+| R-1 | Deckblatt/Inhaltsübersicht | `00_Deckblatt.md` |
+| R-2 | Belegmatrix | `BELEGMATRIX_JOBCENTER.csv` |
+| R-3 | Datei- und Quellenregister | `DATEI_REGISTER.csv` |
+| R-4 | Beweislogik, druckfähig | `DRUCK_ZUSAMMENFASSUNG_BEWEISLOGIK_JOBCENTER.md` |
+| R-5 | Offene Primärunterlagen | `OFFENE_LUECKEN_PRIMAERUNTERLAGEN.md` |
+| R-6 | Übergabeanschreiben | `JOBCENTER_UEBERGABE_ANSCHREIBEN.md` |
+| R-7 | Einseitenfassung | `JOBCENTER_UEBERGABE_EINFACH_1SEITE.md` |
+| B-1 | Gesamtbeweislogik | `00_BEWEISLOGIK_GESAMTSTRUKTUR.md` |
+| B-2 | Technische Kette | `01_TECHNISCHE_FEHLERKETTE.md` |
+| B-3 | Jobcenter-Dokumentation | `02_BEWEISDOKUMENTATION_JOBCENTER_VERURSACHUNG.md` |
+| B-4 | Verwaltungsverantwortung | `02_VERWALTUNGSVERANTWORTUNG.md` |
+| M-1 | Foto-/Videoregister | `05_Fotos_und_Videos.md` |
+| A-1 | Direktlinkregister | `10_ANLAGENVERZEICHNIS_DIREKTLINKS.md` |
 
-### Führende Register
+## LEITFORMEL
 
-- `BK-1`: Primärabrechnungsreihe 2009–2024
-- `BK-5`: Mietkonto/Vorauszahlungen 2022–2024
-- `B-01` bis `B-10`: Beweisfragen
-- `BK-ANTRAG-P1` und `BK-ANTRAG-P2`: Vorlageprioritäten
+```text
+Originalquelle → Feststellung → Rechen-/Technikprüfung
+→ Beweisfrage → Gegenprüfung → Behördenauftrag
+```
 
-**Version:** Arbeitsstand 1.0  
-**Ausdruck:** mit aktuellem Commit-Link und Anlagenregister
+**Status:** Arbeits- und Prüfunterlage; keine abschließende rechtliche, technische oder behördliche Bewertung.  
+**Dokumentationsstand:** [TT.MM.JJJJ]  
+**Einreichende Person:** Andreas Rainer Schade
+
+**Hinweis zum Signet:** Ein später eingebundenes Logo ist ausschließlich private Dokumentationskennzeichnung und kein amtliches Wappen, Gerichtssiegel oder Prüfzeichen.
