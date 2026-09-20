@@ -1,63 +1,34 @@
-# BELEGMATRIX – strukturierte Nachweiszuordnung
-
-**Repository:** `diewand-hue/Nachweise`  
-**Zweck:** Zuordnung von Datei, Beweisfrage, BK-Index, Quelle, Prüfstatus und offener Gegenprüfung  
-**Stand:** 20. September 2026  
-**Status:** Arbeits- und Prüfregister; Originalabgleich und SHA-256-Erfassung noch nicht vollständig
-
-> Die Matrix trennt die Existenz einer Datei von ihrer Beweisbedeutung. Ein Dokument kann eine Beobachtung oder einen Tabellenwert belegen, ohne die technische Ursache, Verantwortlichkeit oder Haftung abschließend zu beweisen.
-
-## 1. Belegmatrix
-
-| Datei | Beweis-ID | BK-Index | Beweisfrage | Quelle | Prüfstatus | Offene Gegenprüfung |
-|---|---|---|---|---|---|---|
-| [`00_BEWEISLOGIK_GESAMTSTRUKTUR.md`](./00_BEWEISLOGIK_GESAMTSTRUKTUR.md) | B-01–B-10 | BK-1 / BK-5 | Wie sind technische, abrechnungsbezogene und behördliche Prüfungen logisch zu trennen? | Repository-Datei, Commit `6e0f2c68c5ae045a8b520ace45809c576382477d` | vorhanden; Arbeitsgrundlage | Jede starke Schlussfolgerung mit Originalseite, Aktenstelle oder Gutachten abgleichen |
-| [`01_TECHNISCHE_FEHLERKETTE.md`](./01_TECHNISCHE_FEHLERKETTE.md) | B-02, B-04, B-05, B-06 | BK-1-2014–BK-1-2024 | Welche technischen Beobachtungen und Messabweichungen sind dokumentiert? | Repository-Datei, Commit `6e0f2c68c5ae045a8b520ace45809c576382477d` | Auswertung vorhanden; technische Ursache offen | Originalprotokolle, Geräte-IDs, Wartungs-/Eichunterlagen und Sachverständigenprüfung |
-| [`02_BEWEISDOKUMENTATION_JOBCENTER_VERURSACHUNG.md`](./02_BEWEISDOKUMENTATION_JOBCENTER_VERURSACHUNG.md) | B-01–B-10 | BK-1 / BK-5 | Welche Kosten, Meldungen und Prüfpflichten werden dem Jobcenter vorgelegt? | Repository-Datei, Commit `6e0f2c68c5ae045a8b520ace45809c576382477d` | Arbeitsdokument; rechtliche und tatsächliche Einzelprüfung offen | Bescheide, Berechnungsblätter, Verwaltungsakte, Eingangs- und Prüfvermerke |
-| [`02_VERWALTUNGSVERANTWORTUNG.md`](./02_VERWALTUNGSVERANTWORTUNG.md) | B-01, B-04, B-05, B-06, B-10 | BK-1 / BK-5 | Welche Stelle hatte welche technische, administrative oder behördliche Rolle? | Repository-Datei, Commit nach Erstellung der Mappe | angelegt; neutrale Rollenmatrix | Aufträge, Übergaben, Arbeitsberichte, Abnahmen, Akteninhalt und Kenntniszeitpunkte |
-| [`beweislogik_jobcenter_zuordnung.md`](./beweislogik_jobcenter_zuordnung.md) | B-01–B-10 | BK-1 / BK-5 | Welche Tatsache ist durch welchen Beleg mit welcher offenen Gegenprüfung verknüpft? | Repository-Datei, Commit `22a61adb39c159072d5f24a262037ea4613a733a` | vorhanden; Zuordnungslogik | Originaldateien, Seiten-/Zeitstempel, SHA-256 und vollständige Quellenpfade ergänzen |
-| `1aSchadensAusgaben(BK_WW_Heizkosten (2)).csv` | B-05–B-10 | BK-1 / BK-5 | Wie lauten Jahreswerte, Salden, Vorauszahlungen und ausgewiesene Differenzen? | Nutzerbereitgestellte CSV; Primäranlage `BK-1` laut Tabellenangabe | Tabellen-Arbeitsquelle; nicht als Originalabrechnung verifiziert | CSV gegen 87-seitige Primäranlage, Einzelabrechnungen und Mietkonto abgleichen |
-| `zeitleiste-der-ereignisse-ab-2017-vervollstandigen.rtf` | B-01–B-04, B-10 | -- | Welche Ereignisse, Meldungen, Reparaturzusagen und Verfahrensschritte sind zeitlich dokumentiert? | Nutzerbereitgestellte RTF-Datei | Chronologie-Arbeitsquelle; Authentizität und Vollständigkeit offen | Original-E-Mails, Anlagen, Zustellnachweise, Protokolle und vollständige Nachrichtenköpfe |
-| `Betriebskosten_2009_2024k.pdf` | B-05–B-09 | BK-1-2009–BK-1-2024 | Welche Originalwerte und Kostenpositionen stehen in der Primärabrechnungsreihe? | Primäranlage `BK-1`, laut CSV 87 Seiten | Primärquelle laut Bestand; Datei im Register noch mit Hash/Seiten zu erfassen | Jede übernommene Zahl mit konkreter PDF-Seite, Ebene und Kostenart dokumentieren |
-| `Beweisanalyse Az 25c612 25.docx` | B-05–B-09 | BK-1 | Welche Jahreswerte und technischen Vergleichsdaten wurden aus `BK-1` extrahiert? | Nutzer-/Aktenangabe; Auswertung der Primäranlage | Auswertung; nicht selbstständiger Ersatz des Originals | Jede Extraktion gegen PDF-Seite und Rechenformel prüfen |
-| `Einreichungsmappe Az 25c612 25.docx` | B-07–B-10 | BK-1 / BK-5 | Welche Kosten-, Vorauszahlungs- und Prüfwerte wurden für die Einreichung zusammengefasst? | Nutzer-/Aktenangabe | Zusammenfassung; Widersprüche ausdrücklich offen | Originalabrechnungen, Mietkonto, Bescheide und aktuelle Verfahrensunterlagen |
-| `bk.py` | B-07, B-08, B-09 | BK-1 / BK-5 | Ist der dokumentierte Rechenweg reproduzierbar? | Nutzerbereitgestelltes Python-Skript | Skript vorhanden; Ausführung und Ergebnisabgleich offen | Quelldatei, Eingabedatei, Ausführung, Ausgabe-Hash und manuelle Kontrollrechnung |
-| `DRUCK_Pruefbericht_mit_Jobcenter_Aufforderung.html` | B-06–B-10 | BK-1 / BK-5 | Welche Aufforderungen und Prüfthesen wurden für das Jobcenter druckfähig zusammengefasst? | Nutzer-/Aktenangabe | Druck-/Darstellungsfassung; Quellenprüfung erforderlich | Verknüpfte Originalseiten, Rechtsquellen und konkrete Aktenzeichen prüfen |
-| `DRUCK_Nur_Jobcenter_Aufforderung.html` | B-10 | BK-1 / BK-5 | Welche konkrete Prüfung wird vom Jobcenter verlangt? | Nutzer-/Aktenangabe | Entwurf; Adressat und Aktenzeichen offen | Bescheide, Fristen, Eingangsbestätigung und aktuelle Leistungsentscheidung |
-| `systematische-verknupfung-von-nachweiskette-und-beweislogik.docx` | B-01–B-10 | BK-1 / BK-5 | Wie werden Nachweiskette und Beweislogik miteinander verbunden? | Nutzer-/Aktenangabe | Grundlagenentwurf; Inhalt zu extrahieren | Originalquellen, Versionsstand und doppelte Aussagen prüfen |
-| `Sammelmappe_Verteidigung_Widerklage_Schade_final.docx` | B-01–B-10 | BK-1 / BK-5 | Welche Sachverhalts- und Antragsdarstellung bildet die Ausgangsbasis? | Nutzer-/Aktenangabe | Ausgangsentwurf; nicht automatisch verifiziert | Vollständigkeit, Belegverweise, aktuelle Verfahrensdaten und rechtliche Prüfung |
-| `01_TECHNISCHE_FEHLERKETTE.pdf` | B-02, B-04, B-05, B-06 | BK-1 | Welche technische Fehlerkette wird als Anlage vorgelegt? | Nutzer-/Aktenangabe; PDF-Anlage | Anlage laut Bestand; Original- und Hashprüfung offen | PDF-Seiten mit zugrunde liegenden Fotos, Protokollen und Messdaten verknüpfen |
-| `Foto-Feststellungen_und_Nachweiszuordnung...5.pdf` | B-02, B-04, B-06 | MED / BK-1-YYYY-F-NNN | Was ist auf den Fotos objektiv erkennbar und welchem Prüfgegenstand ist es zugeordnet? | Nutzer-/Aktenangabe; Fotoanlage | Anlage laut Bestand; Medienregister offen | Originaldateien, Metadaten, Aufnahmekette, Seiten-/Bildnummern und alternative Erklärung |
-| `Video-Feststellungen und Nachweiszuordnung.pdf` | B-02, B-04, B-06 | MED / BK-1-YYYY-V-NNN | Welche Beobachtung ist im Video dokumentiert? | Nutzer-/Aktenangabe; Videoanlage | Anlage laut Bestand; technische Aussagekraft offen | Originalvideos, Dateihash, Zeitstempel, ununterbrochene Aufzeichnung und technische Begutachtung |
-| `Fotos/` | B-02, B-04, B-06 | MED / BK-1-YYYY-F-NNN | Welche Bildbeobachtungen zu Anlage, Ventilen, Zählern und Umgebung sind vorhanden? | [`diewand-hue/Nachweise-/Fotos`](https://github.com/diewand-hue/Nachweise-/tree/main/Fotos) | Primärarchiv; Dateiliste und Hashes fehlen | Vollständige Dateiinventur, SHA-256, EXIF, Originalstand und konkrete Beweis-ID |
-| `Videos/` | B-02, B-04, B-06 | MED / BK-1-YYYY-V-NNN | Welche Videoaufzeichnungen dokumentieren Rotation, Entlüftung, Temperatur oder Anlagenzustand? | [`diewand-hue/Nachweise-/Videos`](https://github.com/diewand-hue/Nachweise-/tree/main/Videos) | Primärarchiv; Dateiliste und Hashes fehlen | Vollständige Dateiinventur, SHA-256, technische Metadaten, Zeitstempel und Sachverständigenprüfung |
-| `DATEI_REGISTER.csv` | B-01–B-10 | BK-1 / BK-5 / MED | Welche Datei ist mit welchem Status, Zeitraum und Prüfbedarf erfasst? | [`DATEI_REGISTER.csv`](./DATEI_REGISTER.csv) | Register angelegt; Hashwerte teilweise Platzhalter | Platzhalter `NICHT_ERFASST` durch berechnete SHA-256-Werte ersetzen |
-
-## 2. Statusdefinitionen
-
-| Status | Bedeutung |
-|---|---|
-| `Primärquelle` | Originalunterlage oder unverändertes Originalmedium; Hash, Pfad und Archivstand müssen dokumentiert sein |
-| `Auswertung` | Zusammenfassung, Tabelle, Skript oder Analyse; gegen die Primärquelle zu prüfen |
-| `Arbeitsdokument` | Struktur- oder Entwurfsdatei; keine eigenständige Tatsachenquelle |
-| `offen` | Beweisfrage oder technische Ursache noch nicht abschließend geklärt |
-| `bestätigt` | nur verwenden, wenn Originalquelle und konkrete Fundstelle geprüft sind |
-| `widersprüchlich` | mindestens zwei nicht aufgelöste Werte oder Darstellungen liegen vor |
-
-## 3. Verbindliche Bearbeitungsregeln
-
-1. **Original vor Auswertung:** Zahlen aus CSV, Markdown, HTML oder DOCX werden gegen die Originalabrechnung geprüft.
-2. **Gebäude und Wohnung trennen:** Ein Gebäude-Gesamtwert darf nicht ohne Umlageschlüssel als individueller Betrag verwendet werden.
-3. **Zeitpunkt trennen:** Aufnahmezeitpunkt, Dateizeitpunkt, behaupteter Ereigniszeitpunkt und Abrechnungszeitraum werden getrennt erfasst.
-4. **Beobachtung von Ursache trennen:** Fotos und Videos belegen zunächst nur die dokumentierte Beobachtung.
-5. **Prüfstatus nicht überdehnen:** `offen` und `widersprüchlich` bleiben sichtbar; sie werden nicht durch eine redaktionelle Formulierung „glattgezogen“.
-6. **Keine Doppelzählung:** `51,94 €`, `643,42 €`, `942,77 €` und `1.534,25 €` werden als getrennte Registerwerte geführt, bis die Primärquellen den Widerspruch auflösen.
-7. **Hashpflicht:** Für jede Originaldatei werden SHA-256, Dateigröße, Pfad und maßgeblicher Commit erfasst.
-
-## 4. Nächste Matrix-Ergänzungen
-
-- vollständige Dateiliste aus `Nachweise-/Fotos` und `Nachweise-/Videos` eintragen;
-- Primäranlage `BK-1` mit PDF-Seitenzahlen erfassen;
-- `BK-5`-Mietkonto und Vorauszahlungsbelege ergänzen;
-- Jobcenter-Bescheide, Berechnungsbögen und Aktenvermerke eintragen;
-- für jede Position einen commitgebundenen Direktlink ergänzen.
+Datei;Beweis-ID;BK-Index;Beweisfrage;Quelle;Prüfstatus;Offene Gegenprüfung
+00_BEWEISLOGIK_GESAMTSTRUKTUR.md;B-01–B-10;BK-1/BK-5;Wie werden technische, abrechnungsbezogene und behördliche Prüfungen getrennt?;Repository-Datei, Commit 6e0f2c68c5ae045a8b520ace45809c576382477d;Arbeitsgrundlage vorhanden;Jede starke Aussage mit Originalseite oder Aktenstelle abgleichen
+01_TECHNISCHE_FEHLERKETTE.md;B-02/B-04/B-05/B-06;BK-1-2014–BK-1-2024;Welche technischen Beobachtungen und Messabweichungen sind dokumentiert?;Repository-Datei, Commit 6e0f2c68c5ae045a8b520ace45809c576382477d;Auswertung vorhanden, Ursache offen;Originalprotokolle, Geräte-IDs, Wartungs-/Eichunterlagen und Sachverständigenprüfung
+02_BEWEISDOKUMENTATION_JOBCENTER_VERURSACHUNG.md;B-01–B-10;BK-1/BK-5;Welche Kosten, Meldungen und Prüfaufträge werden dem Jobcenter vorgelegt?;Repository-Datei, Commit 6e0f2c68c5ae045a8b520ace45809c576382477d;Arbeitsdokument;Bescheide, Berechnungsblätter, Verwaltungsakte und Prüfvermerke
+02_VERWALTUNGSVERANTWORTUNG.md;B-01/B-04/B-05/B-06/B-10;BK-1/BK-5;Welche Stelle hatte welche technische, administrative oder behördliche Rolle?;Repository-Datei, Commit 34835422282f72e5f983b299c5c68f492b66dcbe;Neutrale Rollenmatrix angelegt;Aufträge, Übergaben, Arbeitsberichte, Abnahmen und Kenntniszeitpunkte
+beweislogik_jobcenter_zuordnung.md;B-01–B-10;BK-1/BK-5;Welche Tatsache ist mit welchem Beleg und welcher Gegenprüfung verknüpft?;Repository-Datei, Commit 22a61adb39c159072d5f24a262037ea4613a733a;Zuordnungslogik vorhanden;Originaldateien, Seiten-/Zeitstempel und SHA-256 ergänzen
+1aSchadensAusgaben(BK_WW_Heizkosten (2)).csv;B-05–B-10;BK-1/BK-5;Wie lauten Jahreswerte, Salden, Vorauszahlungen und Differenzen?;Nutzerbereitgestellte CSV, Primäranlage BK-1 laut Tabellenangabe;Tabellen-Arbeitsquelle;Gegen 87-seitige Primäranlage, Einzelabrechnungen und Mietkonto abgleichen
+zeitleiste-der-ereignisse-ab-2017-vervollstandigen.rtf;B-01–B-04/B-10;--;Welche Ereignisse, Meldungen, Reparaturzusagen und Verfahrensschritte sind dokumentiert?;Nutzerbereitgestellte RTF;Chronologie-Arbeitsquelle;Original-E-Mails, Anlagen, Zustellnachweise und Nachrichtenköpfe
+Betriebskosten_2009_2024k.pdf;B-05–B-09;BK-1-2009–BK-1-2024;Welche Originalwerte und Kostenpositionen stehen in der Primärreihe?;Primäranlage BK-1, laut CSV 87 Seiten;Als Primärquelle bezeichnet, Datei im Repository nicht auffindbar;PDF hochladen, Seiten und SHA-256 erfassen
+Beweisanalyse Az 25c612 25.docx;B-05–B-09;BK-1;Welche Jahreswerte und Vergleichsdaten wurden aus BK-1 extrahiert?;Nutzer-/Aktenangabe;Auswertung, nicht Ersatz des Originals;Jede Extraktion gegen PDF-Seite und Rechenformel prüfen
+Einreichungsmappe Az 25c612 25.docx;B-07–B-10;BK-1/BK-5;Welche Kosten-, Vorauszahlungs- und Prüfwerte wurden zusammengefasst?;Nutzer-/Aktenangabe;Zusammenfassung, nicht verifiziert;Originalabrechnungen, Mietkonto, Bescheide und aktuelle Verfahrensdaten
+bk.py;B-07/B-08/B-09;BK-1/BK-5;Ist der Rechenweg reproduzierbar?;Nutzerbereitgestelltes Python-Skript;Skript vorhanden, Ausführung offen;Quelldatei, Eingaben, Ausgabe und manuelle Kontrollrechnung
+DRUCK_Pruefbericht_mit_Jobcenter_Aufforderung.html;B-06–B-10;BK-1/BK-5;Welche Aufforderungen und Prüfthesen wurden druckfähig zusammengefasst?;Nutzer-/Aktenangabe;Druckfassung, Quellenprüfung offen;Originalseiten, Rechtsquellen und Aktenzeichen prüfen
+DRUCK_Nur_Jobcenter_Aufforderung.html;B-10;BK-1/BK-5;Welche konkrete Prüfung wird vom Jobcenter verlangt?;Nutzer-/Aktenangabe;Entwurf;Adressat, Aktenzeichen, Frist und Eingangsbestätigung ergänzen
+systematische-verknupfung-von-nachweiskette-und-beweislogik.docx;B-01–B-10;BK-1/BK-5;Wie werden Nachweiskette und Beweislogik verbunden?;Nutzer-/Aktenangabe;Grundlagenentwurf;Versionsstand und Primärquellen prüfen
+Sammelmappe_Verteidigung_Widerklage_Schade_final.docx;B-01–B-10;BK-1/BK-5;Welche Sachverhalts- und Antragsdarstellung bildet die Ausgangsbasis?;Nutzer-/Aktenangabe;Ausgangsentwurf;Vollständigkeit, Belegverweise und aktuelle Verfahrensdaten prüfen
+01_TECHNISCHE_FEHLERKETTE.pdf;B-02/B-04/B-05/B-06;BK-1;Welche technische Fehlerkette wird als Anlage vorgelegt?;Nutzer-/Aktenangabe;Anlage laut Bestand, Hash offen;PDF-Seiten mit Fotos, Protokollen und Messdaten verknüpfen
+Foto-Feststellungen_und_Nachweiszuordnung...5.pdf;B-02/B-04/B-06;MED/BK-1-YYYY-F-NNN;Was ist auf den Fotos objektiv erkennbar?;Nutzer-/Aktenangabe;Anlage laut Bestand, Medienregister offen;Originaldateien, Metadaten, Bildnummern und alternative Erklärung
+Video-Feststellungen und Nachweiszuordnung.pdf;B-02/B-04/B-06;MED/BK-1-YYYY-V-NNN;Welche Beobachtung ist im Video dokumentiert?;Nutzer-/Aktenangabe;Anlage laut Bestand, technische Aussagekraft offen;Originalvideos, Hash, Zeitstempel und fachkundige Prüfung
+Fotos/;B-02/B-04/B-06;MED/BK-1-YYYY-F-NNN;Welche Bildbeobachtungen sind vorhanden?;https://github.com/diewand-hue/Nachweise-/tree/main/Fotos;Archivpfad aus Nutzerangabe, Dateiliste hier nicht abrufbar;Dateien einzeln inventarisieren, SHA-256/EXIF und commitgebundene Links erfassen
+Videos/;B-02/B-04/B-06;MED/BK-1-YYYY-V-NNN;Welche Videoaufzeichnungen sind vorhanden?;https://github.com/diewand-hue/Nachweise-/tree/main/Videos;Archivpfad aus Nutzerangabe, Dateiliste hier nicht abrufbar;Dateien einzeln inventarisieren, SHA-256/Metadaten und commitgebundene Links erfassen
+DATEI_REGISTER.csv;B-01–B-10;BK-1/BK-5/MED;Welche Datei ist mit welchem Status und Prüfbedarf erfasst?;./DATEI_REGISTER.csv;Register vorhanden, Hashwerte teilweise NICHT_ERFASST;Platzhalter durch berechnete SHA-256 ersetzen
+00_Deckblatt.md;--;--;Welche Mappe und welcher Prüfzweck werden bezeichnet?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Arbeitsdokument;Logo erst nach Bilddatei einbinden und als privat kennzeichnen
+01_Akten_und_Sachstandsuebersicht.md;B-01–B-10;BK-1/BK-5;Welcher Sachstand und welche Rollen sind bekannt?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Arbeitsübersicht;Mit Originalakten und aktuellen Bescheiden abgleichen
+02_Anschreiben_und_Pruefauftrag.md;B-10;BK-1/BK-5;Welche Prüfung wird beantragt?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Entwurf;Adresse, BG-/Aktenzeichen, Frist und Anlagenliste ausfüllen
+03_Beweisverzeichnis_und_Register.md;B-01–B-10;BK-1/BK-5;Welche Beweisfragen und Quellen sind registriert?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Register;Seitenzahlen, Hashes und Originallinks ergänzen
+04_Technische_Fehlerkette.md;B-02/B-04/B-05/B-06;BK-1;Wie wird die technische Auswertung eingeordnet?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Verweisdatei;Mit Originalnachweisen und Gutachten verbinden
+05_Fotos_und_Videos.md;B-02/B-04/B-06;MED;Wie werden Medien integritätsorientiert geführt?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Medienregister;Dateiliste aus Primärarchiv eintragen
+06_Nachweiszuordnung_nach_BK_Index.md;B-05–B-10;BK-1/BK-5;Welche Prüfbereiche gehören zu welchem Tabellenindex?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Zuordnung angelegt;Originalseiten und genaue Tabellenzeilen ergänzen
+07_Schadensausgaben_BK_WW_Heizkosten.md;B-06/B-09;BK-1/BK-5;Welche Arbeitswerte und Widersprüche bestehen?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Arbeitsauswertung;Originalabrechnungen und Mietkonto abgleichen
+08_Rechnungen_und_Einzelbetraege.md;B-03/B-09;BK-1;Welche Einzelbeträge sind belegt?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Register angelegt;Rechnungen, Zahlungsnachweise und Seiten eintragen
+09_Beweislogik_und_Kausalzusammenhang.md;B-01–B-10;BK-1/BK-5;Wie wird die Kausalprüfung strukturiert?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Zusammenfassung;Querverweise und Primärbelege prüfen
+10_Anlagenverzeichnis_mit_Direktlinks.md;--;--;Welche Anlagen sind direkt verknüpft?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Register;Commitgebundene Links ergänzen
+11_Abschluss_und_offene_Pruefpunkte.md;--;--;Welche Punkte verhindern die Übergabe?;Repository-Datei, Commit ca595729fede5a04594e6c3cf680de19aad629f6;Checkliste offen;Nachweise, Hashes, Bescheide und fachkundige Prüfung ergänzen
