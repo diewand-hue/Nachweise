@@ -1,0 +1,35 @@
+Kraft eines Hydraulikzylinders
+Berechnen Sie die theoretische und die geschätzte Nutzkraft des Zylinders.
+Diesen Rechner verwenden
+Formel
+
+F = P × A
+A = πD² / 4
+Funktionsweise dieser Formel
+
+Der auf die Kolbenfläche wirkende Hydraulikdruck erzeugt eine lineare Kraft. Eine größere Kolbenfläche erzeugt bei gleichem Hydraulikdruck eine größere Kraft.
+Variablen
+
+F Zylinderkraft
+P Auf den Kolben wirkender Hydraulikdruck
+A Wirksame Kolbenfläche
+D Kolben- oder Bohrungsdurchmesser
+Anwendung
+
+Bestimmen Sie den Hydraulikdruck am Zylinder.
+Bestimmen Sie die wirksame Kolbenfläche.
+Verwenden Sie für den Ausfahrvorgang gegebenenfalls die gesamte Kolbenfläche.
+Multiplizieren Sie den Druck mit der wirksamen Fläche.
+Berücksichtigen Sie den mechanischen Wirkungsgrad oder den Systemwirkungsgrad, wenn Sie die nutzbare Kraft unter realen Bedingungen abschätzen.
+Technische Erläuterung
+
+Die Rückzugskraft eines doppeltwirkenden Zylinders ist normalerweise geringer als die Ausfahrkraft, da die Kolbenstange die wirksame Ringfläche auf der Stangenseite verringert.
+Einheiten
+
+Größe    Typische Einheiten
+Druck    Pa
+Fläche    m²
+Kraft    N
+Wichtige Hinweise
+
+Technischer Hinweis: Die einfache Bohrungs-Flächen-Gleichung bezieht sich auf die gesamte Kolbenseite. Die tatsächliche Kraft kann durch Dichtungsreibung, Gegendruck, mechanische Verluste und die Lastgeometrie verringert werden.
